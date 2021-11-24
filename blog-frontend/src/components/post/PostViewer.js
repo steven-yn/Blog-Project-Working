@@ -4,9 +4,16 @@ import palette from '../../lib/styles/palette';
 import Responsive from '../common/Responsive';
 import SubInfo from '../common/SubInfo';
 import Tags from '../common/Tags';
+<<<<<<< HEAD
 
 const PostViewerBlock = styled(Responsive)`
   margin-top: 4rem;
+=======
+import LikeButton from '../common/LikeButton';
+
+const PostViewerBlock = styled(Responsive)`
+  margin-top: 10rem;
+>>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9
 `;
 const PostHead = styled.div`
   border-bottom: 1px solid ${palette.gray[2]};
@@ -52,12 +59,19 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
           hasMarginTop
         />
         <Tags tags={tags} />
+<<<<<<< HEAD
       </PostHead>
       {actionButtons}
       <PostContent
         // html 을 그대로 렌더링 하는 형태로 나타낼때 쓰는것.
         dangerouslySetInnerHTML={{ __html: body }}
       />
+=======
+        </PostHead>
+      <PostContent dangerouslySetInnerHTML={{ __html: body }} />
+      <LikeButton style = {{alignItems: 'center'}} />
+      {actionButtons}
+>>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9
     </PostViewerBlock>
   );
 };

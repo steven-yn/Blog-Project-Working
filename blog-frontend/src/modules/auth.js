@@ -18,8 +18,11 @@ const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] =
 const [READ_USER, READ_USER_SUCCESS, READ_USER_FAILURE] =
   createRequestActionTypes('auth/READ_USER');
 
+<<<<<<< HEAD
 const [PERMIT_USER] = createRequestActionTypes('auth/PERMIT_USER');
 
+=======
+>>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9
 export const changeField = createAction(
   CHANGE_FIELD,
   ({ form, key, value }) => ({
@@ -38,7 +41,10 @@ export const login = createAction(LOGIN, ({ username, password }) => ({
   password,
 }));
 export const readUser = createAction(READ_USER);
+<<<<<<< HEAD
 export const permitUser = createAction(PERMIT_USER, (username) => username);
+=======
+>>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9
 
 // saga 생성
 const registerSaga = createRequestSaga(REGISTER, authAPI.register);
@@ -64,6 +70,7 @@ const initialState = {
   auth: null,
   authError: null,
   readUser: {
+<<<<<<< HEAD
     readUser: null,
     error: null,
   },
@@ -71,6 +78,11 @@ const initialState = {
     permit: false,
     username: '',
   },
+=======
+    userList: null,
+    error: null,
+  },
+>>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9
 };
 
 const auth = handleActions(
@@ -114,10 +126,13 @@ const auth = handleActions(
       ...state,
       error,
     }),
+<<<<<<< HEAD
     [PERMIT_USER]: (state, { payload: permitUser }) => ({
       ...state,
       permitUser: permitUser,
     }),
+=======
+>>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9
   },
   initialState,
 );

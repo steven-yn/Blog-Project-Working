@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
+=======
+import React from 'react';
+>>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9
 import { Route } from 'react-router-dom';
 import PostListPage from './pages/PostListPage';
 import LoginPage from './pages/LoginPage';
@@ -15,7 +19,11 @@ const App = () => {
       <Helmet>
         <title>REACTERS</title>
       </Helmet>
+<<<<<<< HEAD
       <Route component={MainPages} path="/home" />
+=======
+      <Route component = {MainPages} path = "/home" />
+>>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9
       <Route component={PostListPage} path={['/@:username', '/']} exact />
       <Route component={LoginPage} path="/login" />
       <Route component={RegisterPage} path="/register" />

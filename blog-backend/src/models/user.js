@@ -5,7 +5,10 @@ import jwt from 'jsonwebtoken';
 const UserSchema = new Schema({
   username: String,
   hashedPassword: String,
+<<<<<<< HEAD
   //Permissions: Boolean,
+=======
+>>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9
 });
 
 // instance method
