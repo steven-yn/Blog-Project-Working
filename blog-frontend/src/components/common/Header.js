@@ -5,8 +5,6 @@ import Button from './Button';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-
-
 const HeaderBlock = styled.div`
   position: fixed;
   width: 100%;
@@ -22,6 +20,7 @@ const Wrapper = styled(Responsive)`
   display: flex;
   align-items: center;
   justify-content: space-between; /* 자식 엘리먼트 사이에 여백을 최대로 설정 */
+  overflow: hidden;
   .logo {
     font-size: 1.7rem;
     font-weight: 750;
@@ -33,6 +32,11 @@ const Wrapper = styled(Responsive)`
     display: flex;
     position: absolute;
     margin-left: 51rem;
+  }
+  .left {
+    display: flex;
+    position: absolute;
+    margin-left: 35rem;
   }
 `;
 
@@ -49,9 +53,6 @@ const UserInfo = styled.div`
   margin-top: 0.2rem;
 `;
 
-const Test = "/@admin/";
-
-
 const Header = ({ user, onLogout }) => {
   return (
     <>
@@ -60,26 +61,43 @@ const Header = ({ user, onLogout }) => {
           <Link to="/" className="logo">
             YXMPORTFOLIO
           </Link>
-          <Navbar bg="#ffffff" variant="light" style = {{marginTop: '8rem'}}>
-          <Container>
-          <Navbar.Brand href="/" style= {{marginRight: '2rem', marginBottom: '1rem'}} >포스트</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href={Test} style= {{marginRight: '2rem', marginBottom: '1rem'}}>공지사항</Nav.Link>
-            <Nav.Link href="/home">사이트</Nav.Link>
-          </Nav>
-          </Container>
-        </Navbar>
+          <Navbar bg="#ffffff" variant="light" style={{ marginTop: '8rem' }}>
+            <Container>
+              <Navbar.Brand
+                href="/"
+                style={{ marginRight: '2rem', marginBottom: '1rem' }}
+              >
+                포스트
+              </Navbar.Brand>
+              <Nav className="me-auto">
+                <Nav.Link
+                  href={'/@admin/'}
+                  style={{ marginRight: '2rem', marginBottom: '1rem' }}
+                >
+                  공지사항
+                </Nav.Link>
+                <Nav.Link href="/home">사이트</Nav.Link>
+              </Nav>
+            </Container>
+          </Navbar>
           {user ? (
-                <div className="right">
-                  <UserInfo>{user.username}</UserInfo>
-                  <Button onClick={onLogout}>로그아웃</Button>
-                </div>
-              ) : (
-                <div className="right">
-                  <Button to="/login">로그인</Button>
-                </div>
-              )}
-            
+            user.username === 'admin' ? (
+              <div className="right">
+                <UserInfo>{user.username}</UserInfo>
+                <Button to="/admin">관리자 페이지</Button>
+                <Button onClick={onLogout}>로그아웃</Button>
+              </div>
+            ) : (
+              <div className="right">
+                <UserInfo>{user.username}</UserInfo>
+                <Button onClick={onLogout}>로그아웃</Button>
+              </div>
+            )
+          ) : (
+            <div className="right">
+              <Button to="/login">로그인</Button>
+            </div>
+          )}
         </Wrapper>
       </HeaderBlock>
       <Spacer />
