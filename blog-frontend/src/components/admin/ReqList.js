@@ -91,7 +91,6 @@ const UserItem = ({ userList, onPermit, permitUserList }) => {
 const ReqList = ({ readUser, onPermit, permitUserList }) => {
   return (
     <ReqListBlock>
-      <DummyBlock />
       <UserTable>
         <h2>유저정보</h2>
       </UserTable>

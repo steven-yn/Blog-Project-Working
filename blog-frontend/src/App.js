@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <title>REACTERS</title>
+        <title>YXMPORTFOLIO</title>
       </Helmet>
       <Route component={MainPages} path="/home" />
       <Route component={PostListPage} path={['/@:username', '/']} exact />
