@@ -7,12 +7,14 @@ import { listPosts } from '../../modules/posts';
 
 const PostListContainer = ({ location, match }) => {
   const dispatch = useDispatch();
-  const { posts, error, loading, user } = useSelector(
-    ({ posts, loading, user }) => ({
+  const { posts, error, loading, user, permitUserList } = useSelector(
+    ({ posts, loading, user, auth }) => ({
       posts: posts.posts,
       error: posts.error,
       loading: loading['posts/LIST_POSTS'],
       user: user.user,
+      userList: auth.readUser,
+      permitUserList: auth.permitUser,
     }),
   );
   useEffect(() => {
@@ -29,9 +31,9 @@ const PostListContainer = ({ location, match }) => {
       error={error}
       posts={posts}
       showWriteButton={user}
+      permitUserList={permitUserList}
     />
   );
 };
-
 
 export default withRouter(PostListContainer);
