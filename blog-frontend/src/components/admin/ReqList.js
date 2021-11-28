@@ -65,7 +65,7 @@ const UserItem = ({ userList, onPermit, permitUserList }) => {
   const checkPermit = permitUserList.find(
     (rtrn) => rtrn.username === userList.username,
   );
-
+  //
   useEffect(() => {
     checkPermit ? setPermit(true) : setPermit(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
