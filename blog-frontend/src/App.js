@@ -17,7 +17,7 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <title>YXMPORTFOLIO</title>
+        <title>REACTERS</title>
       </Helmet>
 <<<<<<< HEAD
       <Route component={MainPages} path="/home" />

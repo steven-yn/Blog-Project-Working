@@ -16,40 +16,41 @@ const HeaderBlock = styled.div`
  * Responsive 컴포넌트의 속성에 스타일을 추가해서 새로운 컴포넌트 생성
  */
 const Wrapper = styled(Responsive)`
-  height: 9rem;
+  height: 11rem;
   display: flex;
   align-items: center;
   justify-content: space-between; /* 자식 엘리먼트 사이에 여백을 최대로 설정 */
+<<<<<<< HEAD
+=======
+  overflow: hidden;
+>>>>>>> parent of 8892bf4 (ver 1.1.1)
   .logo {
     font-size: 1.7rem;
     font-weight: 750;
     letter-spacing: 2px;
+    position: absolute;
     margin-bottom: 1rem;
   }
-`;
-
-const NavWrap = styled(Responsive)`
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-bottom: 1rem;
-
-  .nav {
-    border-right: 2px solid;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+  .right {
+    display: flex;
+    position: absolute;
+    margin-left: 51rem;
   }
+<<<<<<< HEAD
+=======
+  .left {
+    display: flex;
+    position: absolute;
+    margin-left: 35rem;
+  }
+>>>>>>> parent of 8892bf4 (ver 1.1.1)
 `;
 
 /**
  * 헤더가 fixed로 되어 있기 때문에 페이지의 컨텐츠가 4rem 아래 나타나도록 해주는 컴포넌트
  */
 const Spacer = styled.div`
-  height: 11rem;
+  height: 3rem;
 `;
 
 const UserInfo = styled.div`
@@ -78,7 +79,11 @@ const Header = ({ user, onLogout }) => {
               </Navbar.Brand>
               <Nav className="me-auto">
                 <Nav.Link
+<<<<<<< HEAD
                   href={Test}
+=======
+                  href={'/@admin/'}
+>>>>>>> parent of 8892bf4 (ver 1.1.1)
                   style={{ marginRight: '2rem', marginBottom: '1rem' }}
                 >
                   공지사항
@@ -88,33 +93,31 @@ const Header = ({ user, onLogout }) => {
             </Container>
           </Navbar>
           {user ? (
+<<<<<<< HEAD
             <div className="right">
               <UserInfo>{user.username}</UserInfo>
               <Button onClick={onLogout}>로그아웃</Button>
             </div>
+=======
+            user.username === 'admin' ? (
+              <div className="right">
+                <UserInfo>{user.username}</UserInfo>
+                <Button to="/admin">관리자 페이지</Button>
+                <Button onClick={onLogout}>로그아웃</Button>
+              </div>
+            ) : (
+              <div className="right">
+                <UserInfo>{user.username}</UserInfo>
+                <Button onClick={onLogout}>로그아웃</Button>
+              </div>
+            )
+>>>>>>> parent of 8892bf4 (ver 1.1.1)
           ) : (
             <div className="right">
               <Button to="/login">로그인</Button>
             </div>
           )}
         </Wrapper>
-        <NavWrap>
-          <Navbar bg="#ffffff" variant="light">
-            <Container>
-              <Nav className="me-auto">
-                <Link className="nav" to="/">
-                  포스트
-                </Link>
-                <Link className="nav" to={'/@admin/'}>
-                  공지사항
-                </Link>
-                <Link className="navlast" to="/home">
-                  사이트
-                </Link>
-              </Nav>
-            </Container>
-          </Navbar>
-        </NavWrap>
       </HeaderBlock>
       <Spacer />
     </>

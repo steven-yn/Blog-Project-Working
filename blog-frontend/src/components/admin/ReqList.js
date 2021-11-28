@@ -96,6 +96,7 @@ const ReqList = ({ readUser }) => {
 >>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9
   return (
     <ReqListBlock>
+      <DummyBlock />
       <UserTable>
         <h3>유저정보</h3>
       </UserTable>
