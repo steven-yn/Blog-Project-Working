@@ -20,19 +20,6 @@ const Wrapper = styled(Responsive)`
   display: flex;
   align-items: center;
   justify-content: space-between; /* 자식 엘리먼트 사이에 여백을 최대로 설정 */
-  overflow: hidden;
-  .right {
-    display: flex;
-    align-items: center;
-  }
-
-  .rightlast {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0.5rem;
-  }
-
   .logo {
     font-size: 1.7rem;
     font-weight: 750;
@@ -56,13 +43,6 @@ const NavWrap = styled(Responsive)`
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
-
-  .navlast {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
 `;
 
 /**
@@ -78,6 +58,8 @@ const UserInfo = styled.div`
   margin-top: 0.2rem;
 `;
 
+const Test = '/@admin/';
+
 const Header = ({ user, onLogout }) => {
   return (
     <>
@@ -86,23 +68,30 @@ const Header = ({ user, onLogout }) => {
           <Link to="/" className="logo">
             YXMPORTFOLIO
           </Link>
+          <Navbar bg="#ffffff" variant="light" style={{ marginTop: '8rem' }}>
+            <Container>
+              <Navbar.Brand
+                href="/"
+                style={{ marginRight: '2rem', marginBottom: '1rem' }}
+              >
+                포스트
+              </Navbar.Brand>
+              <Nav className="me-auto">
+                <Nav.Link
+                  href={Test}
+                  style={{ marginRight: '2rem', marginBottom: '1rem' }}
+                >
+                  공지사항
+                </Nav.Link>
+                <Nav.Link href="/home">사이트</Nav.Link>
+              </Nav>
+            </Container>
+          </Navbar>
           {user ? (
-            user.username === 'admin' ? (
-              <div>
-                <div className="right">
-                  <UserInfo>{user.username}</UserInfo>
-                  <Button onClick={onLogout}>로그아웃</Button>
-                </div>
-                <div className="rightlast">
-                  <Button to="/admin">관리자 페이지</Button>
-                </div>
-              </div>
-            ) : (
-              <div className="right">
-                <UserInfo>{user.username}</UserInfo>
-                <Button onClick={onLogout}>로그아웃</Button>
-              </div>
-            )
+            <div className="right">
+              <UserInfo>{user.username}</UserInfo>
+              <Button onClick={onLogout}>로그아웃</Button>
+            </div>
           ) : (
             <div className="right">
               <Button to="/login">로그인</Button>

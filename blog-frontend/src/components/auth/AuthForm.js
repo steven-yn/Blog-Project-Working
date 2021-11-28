@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Button } from '@material-ui/core';
+import {Button} from "@material-ui/core"
 import palette from '../../lib/styles/palette';
 import ButtonReal from '../common/Button';
 
@@ -63,7 +63,7 @@ const ButtonWithMarginTop = styled(ButtonReal)`
 
 const textMap = {
   login: '로그인',
-  register: '회원가입',
+  register: '회원가입'
 };
 
 /**
@@ -75,6 +75,7 @@ const ErrorMessage = styled.div`
   font-size: 0.875rem;
   margin-top: 1rem;
 `;
+
 
 const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
   const text = textMap[type];
@@ -107,8 +108,8 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
             value={form.passwordConfirm}
           />
         )}
-        {type === 'register' && (
-          <StyledInput
+      {type === 'register' && (
+        <StyledInput
             autoComplete="nickname"
             name="nickname"
             placeholder="닉네임"
@@ -116,22 +117,17 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
             value={form.nickname}
           />
         )}
-        {type === 'register' && (
-          <StyledInput
+      {type === 'register' && (
+        <StyledInput
             autoComplete="phonenumber"
             name="phone"
             placeholder="휴대 전화"
             onChange={onChange}
             value={form.phone}
-          />
+          /> 
         )}
         {type === 'register' && (
-          <Button
-            variant="outlined"
-            onClick={() => alert('휴대 전화 인증 알림입니다')}
-          >
-            인증하기
-          </Button>
+           <Button variant="outlined" style = {{marginLeft : '35%', marginTop: '6px'}} onClick = {() => alert('휴대 전화 인증 알림입니다')}>인증하기</Button>
         )}
         {error && <ErrorMessage>{error}</ErrorMessage>}
         <ButtonWithMarginTop cyan fullWidth style={{ marginTop: '1rem' }}>

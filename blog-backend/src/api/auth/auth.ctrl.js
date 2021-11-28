@@ -142,6 +142,7 @@ export const readUser = async (ctx) => {
     ctx.throw(500, e);
   }
 };
+<<<<<<< HEAD
 
 /*
 POST /api/auth/permitUser
@@ -158,3 +159,5 @@ export const permitUser = async (ctx) => {
   }
 }
 */
+=======
+>>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9

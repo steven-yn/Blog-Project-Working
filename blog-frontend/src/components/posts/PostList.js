@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 import Button from '../common/Button';
@@ -60,58 +60,58 @@ const PostItem = ({ post }) => {
   );
 };
 
-const PostList = ({
-  posts,
-  loading,
-  error,
-  showWriteButton,
-  permitUserList,
-}) => {
-  const [permit, setPermit] = useState(false);
-
-  const checkPermit =
-    showWriteButton &&
-    permitUserList.find((rtrn) => rtrn.username === showWriteButton.username);
-
-  useEffect(() => {
-    checkPermit ? setPermit(true) : setPermit(false);
-    return;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [[], permitUserList]);
-
+<<<<<<< HEAD
+const PostList = ({ posts, loading, error, showWriteButton, permit }) => {
+=======
+const PostList = ({ posts, loading, error, showWriteButton }) => {
+>>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9
   // 에러 발생 시
   if (error) {
     return <PostListBlock>에러가 발생했습니다.</PostListBlock>;
   }
 
   return (
-    permitUserList[permitUserList.length - 1]?.username && (
-      <PostListBlock>
-        <WritePostButtonWrapper>
-          {permit && showWriteButton && (
+    <PostListBlock>
+      <WritePostButtonWrapper>
+<<<<<<< HEAD
+        {showWriteButton &&
+          (permit ? (
             <Button cyan to="/write">
               새 글 작성하기
             </Button>
-          )}
-        </WritePostButtonWrapper>
-        {/*  로딩 중 아니고, 포스트 배열이 존재할 때만 보여줌 */}
-        {!loading && posts && (
-          <div>
-            {posts.map((post) => (
-              <PostItem post={post} key={post._id} />
-            ))}
-          </div>
+          ) : (
+            ''
+          ))}
+=======
+        {showWriteButton && (
+          <Button cyan to="/write">
+            새 글 작성하기
+          </Button>
         )}
-        {!loading && posts && (
-          <div>
-            {posts.map((post) => (
-              <noticeItem post={post} key={post._id} />
-            ))}
-          </div>
-        )}
-      </PostListBlock>
-    )
+>>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9
+      </WritePostButtonWrapper>
+      {/*  로딩 중 아니고, 포스트 배열이 존재할 때만 보여줌 */}
+      {!loading && posts && (
+        <div>
+          {posts.map((post) => (
+            <PostItem post={post} key={post._id} />
+          ))}
+        </div>
+      )}
+      {!loading && posts && (
+        <div>
+          {posts.map((post) => (
+            <noticeItem post={post} key={post._id} />
+          ))}
+        </div>
+      )}
+    </PostListBlock>
   );
 };
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> e4e245786aea6118015bd774ae0b9d66578c42c9
 export default PostList;
