@@ -129,6 +129,14 @@ export const logout = async (ctx) => {
   ctx.status = 204; // No Content
 };
 
+/****************************************
+// Description : Admin RestAPI
+// Vision : V1.0.0
+// Filename : auth.ctrl.js
+// Copyright 2021, Sung Yeon Yoon
+// Email: steven_yoon1009@naver.com
+* ****************************************/
+
 /*
 GET /api/auth/readUser
 */

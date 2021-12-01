@@ -1,3 +1,11 @@
+/****************************************
+// Description : Permitted PostListContainer Component
+// Vision : V1.1.1
+// Filename : PostListContainer.js
+// Copyright 2021, Sung Yeon Yoon
+// Email: steven_yoon1009@naver.com
+* ****************************************/
+
 import React, { useEffect } from 'react';
 import qs from 'qs';
 import { withRouter } from 'react-router-dom';

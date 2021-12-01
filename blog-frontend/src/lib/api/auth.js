@@ -1,3 +1,11 @@
+/****************************************
+// Description : Admin RestAPI <=> axios
+// Vision : V1.0.0
+// Filename : auth.js
+// Copyright 2021, Sung Yeon Yoon
+// Email: steven_yoon1009@naver.com
+* ****************************************/
+
 import client from './client';
 
 // 로그인

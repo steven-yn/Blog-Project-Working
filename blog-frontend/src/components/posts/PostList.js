@@ -1,3 +1,11 @@
+/****************************************
+// Description : Permitted PostList UI Component
+// Vision : V1.1.1
+// Filename : PostList.js
+// Copyright 2021, Sung Yeon Yoon
+// Email: steven_yoon1009@naver.com
+* ****************************************/
+
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';

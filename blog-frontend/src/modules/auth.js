@@ -1,3 +1,11 @@
+/****************************************
+// Description : Admin Redux Component
+// Vision : V1.1.1
+// Filename : auth.js
+// Copyright 2021, Sung Yeon Yoon
+// Email: steven_yoon1009@naver.com
+* ****************************************/
+
 import { createAction, handleActions } from 'redux-actions';
 import produce from 'immer';
 import { takeLatest } from 'redux-saga/effects';
