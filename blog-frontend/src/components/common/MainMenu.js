@@ -49,7 +49,7 @@ const MainMenu = ({ user, onLogout }) => {
       <HeaderBlock>
         <Wrapper>
           <Link to="/" className="logo">
-            YXMPORTFOLIO
+            Relog
           </Link>
           {user ? (
             <div className="right">

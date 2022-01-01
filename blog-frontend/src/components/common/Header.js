@@ -84,7 +84,7 @@ const Header = ({ user, onLogout }) => {
       <HeaderBlock>
         <Wrapper>
           <Link to="/" className="logo">
-            YXMPORTFOLIO
+            Relog
           </Link>
           {user ? (
             user.username === 'admin' ? (

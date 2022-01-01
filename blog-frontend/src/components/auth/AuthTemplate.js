@@ -44,7 +44,7 @@ const AuthTemplate = ({ children }) => {
     <AuthTemplateBlock>
       <WhiteBox>
         <div className="logo-area">
-          <Link to="/">YXMPORTFOLIO</Link>
+          <Link to="/">Relog</Link>
         </div>
         {children}
       </WhiteBox>

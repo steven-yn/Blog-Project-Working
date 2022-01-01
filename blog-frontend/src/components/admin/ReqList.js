@@ -15,11 +15,6 @@ import { useState } from 'react';
 // import palette from '../../lib/styles/palette';
 // import SubInfo from '../common/SubInfo';
 
-const DummyBlock = styled.div`
-  display: flex;
-  height: 8rem;
-`;
-
 const UserTable = styled.div`
   display: flex;
   justify-content: flex-start;
